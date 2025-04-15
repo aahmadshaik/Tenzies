@@ -17,8 +17,9 @@ const App = () => {
   const focusRef = useRef(null);
 
   useEffect(() => {
-    if (gameWon && focusRef.current) {
+    if (gameWon && focusRef.current && navigator.vibrate) {
       focusRef.current.focus();
+      navigator.vibrate(1000);
     }
   }, [gameWon]);
 
